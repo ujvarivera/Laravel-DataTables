@@ -26,3 +26,7 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
+
+Route::get('/{menu}', function($menu) {
+    return view('menu_demo', ['menu' => $menu]);
+});
