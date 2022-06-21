@@ -28,5 +28,11 @@ Route::middleware([
 });
 
 Route::get('/{menu}', function($menu) {
-    return view('menu_demo', ['menu' => $menu]);
+    if (in_array($menu, config('menu')['menus'])) {
+        return view('menu_demo', ['menu' => $menu]);
+    }
+    else {
+        //abort(404);
+        return redirect('/dashboard');
+    }
 });

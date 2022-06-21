@@ -16,10 +16,7 @@
                         {{ __('Dashboard') }}
                     </x-jet-nav-link>
             
-                @php
-                    $menus = ['menu1', 'menu2', 'menu3']
-                @endphp
-                @foreach ($menus as $menu)
+                @foreach (config('menu')['menus'] as $menu)
                     <x-jet-nav-link href="/{{$menu}}" :active="request()->routeIs('/{{$menu}}')">
                         {{ __($menu) }}
                     </x-jet-nav-link>
