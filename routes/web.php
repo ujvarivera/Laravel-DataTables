@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,6 +28,8 @@ Route::middleware([
     })->name('dashboard');
 });
 
+Route::get('/users', [UserController::class, 'index']);
+
 Route::get('/{menu}', function($menu) {
     if (in_array($menu, config('menu')['menus'])) {
         return view('menu_demo', ['menu' => $menu]);
@@ -36,3 +39,5 @@ Route::get('/{menu}', function($menu) {
         return redirect('/dashboard');
     }
 });
+
+
