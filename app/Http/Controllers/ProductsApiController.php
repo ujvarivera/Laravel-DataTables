@@ -16,21 +16,18 @@ class ProductsApiController extends Controller
         $this->data = json_decode($this->data);
     }
 
-    public function index()
+    public function index(Request $request)
     {
-        return view('products', ['data'=>$this->data]);
-    }
-
-    public function getProductsData() 
-    {
-        //dd($this->data);
-        //dd(collect($this->data));
-        return Datatables::of(collect($this->data))
+        if ($request->ajax()) {
+            return Datatables::of(collect($this->data))
             ->addColumn('action', function ($row) {
-                return '<a href="#view-'.$row->author.'" class="edit btn btn-primary btn-sm"></i> View</a>';
+                return '<a href="#view-'.$row->author.'" class="edit btn btn-success btn-sm text-center"></i> View</a>';
             })
             ->rawColumns(['action'])
             ->setTotalRecords(40)
-            ->make(true);
+            ->make(true);            
         }
+        return view('products');
+    }
+
 }

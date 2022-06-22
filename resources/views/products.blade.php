@@ -14,6 +14,7 @@
                         <tr>
                             <th>Text</th>
                             <th>Author</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
                 </table>
@@ -23,7 +24,7 @@
                         $('#products-table').DataTable({
                             processing: true,
                             serverSide: true,
-                            ajax: '{!! route('products.data') !!}',
+                            ajax: '{!! route('products.index') !!}',
                             columns: [
                                 { data: 'text', name: 'text' },
                                 { data: 'author', name: 'author' },

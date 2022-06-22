@@ -31,7 +31,6 @@ Route::middleware([
 
 Route::get('/users', [UserController::class, 'index']);
 Route::get('/products', [ProductsApiController::class, 'index'])->name('products.index');
-Route::get('/products_data', [ProductsApiController::class, 'getProductsData'])->name('products.data');
 
 Route::get('/{menu}', function($menu) {
     if (in_array($menu, config('menu')['menus'])) {
