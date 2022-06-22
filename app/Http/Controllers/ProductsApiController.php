@@ -25,6 +25,12 @@ class ProductsApiController extends Controller
     {
         //dd($this->data);
         //dd(collect($this->data));
-        return Datatables::of(collect($this->data))->make(true);
-    }
+        return Datatables::of(collect($this->data))
+            ->addColumn('action', function ($row) {
+                return '<a href="#view-'.$row->author.'" class="edit btn btn-primary btn-sm"></i> View</a>';
+            })
+            ->rawColumns(['action'])
+            ->setTotalRecords(40)
+            ->make(true);
+        }
 }

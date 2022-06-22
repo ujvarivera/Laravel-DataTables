@@ -26,7 +26,8 @@
                             ajax: '{!! route('products.data') !!}',
                             columns: [
                                 { data: 'text', name: 'text' },
-                                { data: 'author', name: 'author' }
+                                { data: 'author', name: 'author' },
+                                { data: 'action', name: 'action', orderable: false, searchable: false }
                             ]
 
                         });

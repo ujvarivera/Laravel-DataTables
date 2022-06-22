@@ -21,20 +21,23 @@ class UsersDataTable extends DataTable
     {
         return datatables()
             ->eloquent($query)
-            ->addColumn('action', 'usersdatatable.action');
+            ->addColumn('action', 'users.action'); // resources/views/users/action.blade.php
     }
 
     /**
      * Get query source of dataTable.
      *
-     * @param \App\Models\UsersDataTable $model
+     * @param \App\Models\User $model
      * @return \Illuminate\Database\Eloquent\Builder
      */
-    public function query(UsersDataTable $model)
+    public function query(User $model)
     {
-        //return $model->newQuery(); // emiatt nem működött...
+        return $model->newQuery();
+        //return User::select()->newQuery();
+        /*
         $users = User::select();
         return $this->applyScopes($users);
+        */
     }
 
     /**
@@ -67,24 +70,16 @@ class UsersDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            /*
+            Column::make('id'),
+            Column::make('name'),
+            Column::make('email'),
+            Column::make('created_at'),
+            Column::make('updated_at'),
             Column::computed('action')
                   ->exportable(false)
                   ->printable(false)
                   ->width(60)
-                  ->addClass('text-center'),
-            */
-            Column::make('id'),
-            Column::make('name'),
-            Column::make('email'),
-            Column::make('updated_at'),
-            
-
-            /*
-            'id',
-            'name',
-            'email'
-            */
+                  ->addClass('text-center')            
         ];
     }
 

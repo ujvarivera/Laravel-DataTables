@@ -29,7 +29,9 @@
         <!-- Bootstrap JavaScript -->
         <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 
-        <script src="/vendor/datatables/buttons.server-side.js"></script>
+        <script src="{{ mix('js/app.js') }}"></script>
+        <script src="{{ asset('vendor/datatables/buttons.server-side.js') }}"></script>
+    
 
 
     </head>
