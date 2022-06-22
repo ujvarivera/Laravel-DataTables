@@ -18,6 +18,9 @@
                     <x-jet-nav-link href="/users" :active="request()->routeIs('/users')">
                         {{ __('Users') }}
                     </x-jet-nav-link>
+                    <x-jet-nav-link href="/products" :active="request()->routeIs('/users')">
+                        {{ __('Products') }}
+                    </x-jet-nav-link>
             
                 @foreach (config('menu')['menus'] as $menu)
                     <x-jet-nav-link href="/{{$menu}}" :active="request()->routeIs('/{{$menu}}')">
