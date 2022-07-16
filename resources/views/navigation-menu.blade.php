@@ -15,15 +15,15 @@
                     <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-jet-nav-link>
-                    <x-jet-nav-link href="/users" :active="request()->routeIs('/users')">
+                    <x-jet-nav-link href="{{ route('users.index') }}" :active="request()->routeIs('users.index')">
                         {{ __('Users') }}
                     </x-jet-nav-link>
-                    <x-jet-nav-link href="/products" :active="request()->routeIs('/users')">
-                        {{ __('Products') }}
+                    <x-jet-nav-link href="{{ route('quotes.index') }}" :active="request()->routeIs('quotes.index')">
+                        {{ __('Quotes') }}
                     </x-jet-nav-link>
             
                 @foreach (config('menu')['menus'] as $menu)
-                    <x-jet-nav-link href="/{{$menu}}" :active="request()->routeIs('/{{$menu}}')">
+                    <x-jet-nav-link href="{{ route('menus', $menu) }}" :active="request()->routeIs('menus', $menu)">
                         {{ __($menu) }}
                     </x-jet-nav-link>
                 @endforeach

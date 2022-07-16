@@ -6,9 +6,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use Yajra\Datatables\Datatables;
 
-class ProductsApiController extends Controller
+class QuotesApiController extends Controller
 {
-    private $data;
+    private $data; // contains the quotes
 
     public function __construct()
     {
@@ -27,7 +27,7 @@ class ProductsApiController extends Controller
             ->setTotalRecords(40)
             ->make(true);            
         }
-        return view('products');
+        return view('quotes.index');
     }
 
 }
