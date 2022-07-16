@@ -14,7 +14,7 @@
                         <tr>
                             <th>Text</th>
                             <th>Author</th>
-                            <th>Action</th>
+                            <!-- <th>Action</th> -->
                         </tr>
                     </thead>
                 </table>
@@ -28,7 +28,7 @@
                             columns: [
                                 { data: 'text', name: 'text' },
                                 { data: 'author', name: 'author' },
-                                { data: 'action', name: 'action', orderable: false, searchable: false }
+                                //{ data: 'action', name: 'action', orderable: false, searchable: false }
                             ]
 
                         });

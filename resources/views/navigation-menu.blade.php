@@ -21,6 +21,9 @@
                     <x-jet-nav-link href="{{ route('quotes.index') }}" :active="request()->routeIs('quotes.index')">
                         {{ __('Quotes') }}
                     </x-jet-nav-link>
+                    <x-jet-nav-link href="{{ route('meals.index') }}" :active="request()->routeIs('meals.index')">
+                        {{ __('Meals') }}
+                    </x-jet-nav-link>
             
                 @foreach (config('menu')['menus'] as $menu)
                     <x-jet-nav-link href="{{ route('menus', $menu) }}" :active="request()->routeIs('menus', $menu)">

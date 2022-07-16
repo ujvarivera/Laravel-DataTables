@@ -20,10 +20,12 @@ class QuotesApiController extends Controller
     {
         if ($request->ajax()) {
             return Datatables::of(collect($this->data))
+            /*
             ->addColumn('action', function ($row) {
                 return '<a href="#view-'.$row->author.'" class="edit btn btn-success btn-sm text-center"></i> View</a>';
             })
-            ->rawColumns(['action'])
+            */
+            // ->rawColumns(['action'])
             ->setTotalRecords(40)
             ->make(true);            
         }
