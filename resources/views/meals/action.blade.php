@@ -1,1 +1,1 @@
-<a href="{{$meal->strMealThumb}}" class="btn btn-primary btn-sm">View pic</a>
+<a href="{{$meal->strMealThumb}}" class="btn btn-primary btn-sm" target="_blank">View pic</a>

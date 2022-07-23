@@ -28,6 +28,12 @@
         <script src="https://cdn.datatables.net/buttons/1.0.3/js/dataTables.buttons.min.js"></script>
         <script src="/vendor/datatables/buttons.server-side.js"></script>
 
+        <!-- searchbuilder -->
+        <script src="https://cdn.datatables.net/searchbuilder/1.3.4/js/dataTables.searchBuilder.min.js"></script>
+        <script src="https://cdn.datatables.net/datetime/1.1.2/js/dataTables.dateTime.min.js"></script>
+        <link rel="stylesheet" href="https://cdn.datatables.net/searchbuilder/1.3.4/css/searchBuilder.dataTables.min.css">
+        <link rel="stylesheet" href="https://cdn.datatables.net/datetime/1.1.2/js/dataTables.dateTime.min.js">
+
     </head>
     <body class="font-sans antialiased">
         <x-jet-banner />

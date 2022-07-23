@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\ClientController;
+use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\MealController;
 use App\Http\Controllers\QuotesApiController;
 use App\Http\Controllers\UserController;
@@ -33,6 +35,8 @@ Route::middleware([
 Route::get('/users', [UserController::class, 'index'])->name('users.index');
 Route::get('/quotes', [QuotesApiController::class, 'index'])->name('quotes.index');
 Route::get('/meals', [MealController::class, 'index'])->name('meals.index');
+Route::get('/clients', [ClientController::class, 'index'])->name('clients.index');
+Route::get('/companies', [CompanyController::class, 'index'])->name('companies.index');
 
 Route::get('/{menu}', function($menu) {
     if (in_array($menu, config('menu')['menus'])) {
